@@ -35,6 +35,17 @@ namespace MSLib
 
         public void Draw()
         {
+            if (editorFilePathsAsset == null)
+            {
+                EditorGUILayout.HelpBox("設定ファイルがロード出来ませんでした",MessageType.Error);
+                EditorGUILayout.LabelField("設定ファイルのパスを読み込ませて下さい");
+                settingFilePath = EditorGUILayout.TextField(settingFilePath);
+                if (GUILayout.Button("初期化",GUILayout.MaxWidth(100.0f)))
+                {
+                    Init();
+                }
+                return;
+            }
             using (new GUILayout.VerticalScope())
             {
                 using (var scrollView = new EditorGUILayout.ScrollViewScope(scrollPosition))
