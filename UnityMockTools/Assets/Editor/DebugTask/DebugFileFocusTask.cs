@@ -8,10 +8,12 @@ namespace MSLib
 {
     public sealed class DebugFileFocusTask : IDebugTask
     {
+        private Vector2 scrollPosition = new Vector2();
         private const string overviewText = "「Project」Windowで任意のファイルをフォーカスする事が出来ます";
         private string[] paths = new[] { "IDebugTask" };//Assets/.../
         private EditorFilePathsAsset editorFilePathsAsset = null;
         private const string SettingFilePath = "Assets/Editor/DebugScriptableObject/EditorFilePaths.asset";
+        
         
         public bool IsFoldout { get; set; }
 
@@ -35,23 +37,28 @@ namespace MSLib
         {
             using (new GUILayout.VerticalScope())
             {
-                using (new GUILayout.HorizontalScope())
+                using (var scrollView = new EditorGUILayout.ScrollViewScope(scrollPosition))
                 {
-                    EditorGUILayout.LabelField("ラベル",GUILayout.MaxWidth(150.0f));
-                    EditorGUILayout.LabelField("ファイルパス",GUILayout.MaxWidth(500.0f));
-                    EditorGUILayout.LabelField("",GUILayout.MaxWidth(100.0f));
-                }
-                
-                foreach (var pathInfo in editorFilePathsAsset.PathList)
-                {
-                    var path = pathInfo.path;
+                    scrollPosition = scrollView.scrollPosition;
+                    
                     using (new GUILayout.HorizontalScope())
                     {
-                        EditorGUILayout.LabelField(pathInfo.label,GUILayout.MaxWidth(150.0f));
-                        EditorGUILayout.LabelField(path,GUILayout.MaxWidth(500.0f));
-                        if (GUILayout.Button("Focus",GUILayout.MaxWidth(100.0f)))
+                        EditorGUILayout.LabelField("ラベル",GUILayout.MaxWidth(150.0f));
+                        EditorGUILayout.LabelField("ファイルパス",GUILayout.MaxWidth(500.0f));
+                        EditorGUILayout.LabelField("",GUILayout.MaxWidth(100.0f));
+                    }
+                
+                    foreach (var pathInfo in editorFilePathsAsset.PathList)
+                    {
+                        var path = pathInfo.path;
+                        using (new GUILayout.HorizontalScope())
                         {
-                            Execution(path);
+                            EditorGUILayout.LabelField(pathInfo.label,GUILayout.MaxWidth(150.0f));
+                            EditorGUILayout.LabelField(path,GUILayout.MaxWidth(500.0f));
+                            if (GUILayout.Button("Focus",GUILayout.MaxWidth(100.0f)))
+                            {
+                                Execution(path);
+                            }
                         }
                     }
                 }
