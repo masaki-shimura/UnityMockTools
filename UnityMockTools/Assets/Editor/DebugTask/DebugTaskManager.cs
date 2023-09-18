@@ -9,7 +9,6 @@ namespace MSLib
 
         public void Init()
         {
-            debugTaskList = new Dictionary<string,IDebugTask>();
             foreach (var debugTask in debugTaskList)
             {
                 debugTask.Value.Init();
