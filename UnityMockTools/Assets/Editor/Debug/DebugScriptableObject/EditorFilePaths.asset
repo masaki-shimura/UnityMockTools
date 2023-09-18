@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EditorFilePaths
   m_EditorClassIdentifier: 
   pathList:
-  - label: "DebugTask\u4FDD\u5B58\u5834\u6240"
-    path: Assets/Editor/DebugTask
+  - label: "\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306E\u5834\u6240 (EditorFilePaths.asset)"
+    path: Assets/Editor/Debug/DebugScriptableObject
   - label: "Scene\u4FDD\u5B58\u5834\u6240"
     path: Assets/Scenes

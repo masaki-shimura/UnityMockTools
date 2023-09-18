@@ -12,14 +12,14 @@ namespace MSLib
         private const string overviewText = "「Project」Windowで任意のファイルをフォーカスする事が出来ます";
         private string[] paths = new[] { "IDebugTask" };//Assets/.../
         private EditorFilePathsAsset editorFilePathsAsset = null;
-        private const string SettingFilePath = "Assets/Editor/DebugScriptableObject/EditorFilePaths.asset";
+        private string settingFilePath = "Assets/Editor/Debug/DebugScriptableObject/EditorFilePaths.asset";
         
         
         public bool IsFoldout { get; set; }
 
         public void Init()
         { 
-            editorFilePathsAsset = AssetDatabase.LoadAssetAtPath<EditorFilePathsAsset>(SettingFilePath);
+            editorFilePathsAsset = AssetDatabase.LoadAssetAtPath<EditorFilePathsAsset>(settingFilePath);
             Assert.IsNotNull(editorFilePathsAsset,"設定ファイルがNullでした");
         }
 
@@ -76,7 +76,7 @@ namespace MSLib
         /// </summary>
         public void Execution()
         {
-            string path = "Assets/Editor";
+            string path = "Assets/Editor/Debug";
             
             var obj = AssetDatabase.LoadAssetAtPath(path, typeof(UnityEngine.Object)); 
             EditorUtility.FocusProjectWindow();
