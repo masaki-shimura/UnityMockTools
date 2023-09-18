@@ -25,8 +25,9 @@ namespace MSLib
 
         private void OnEnable()
         {
-            _debugTaskManager.Init();
             _debugTaskManager.AddTask("ファイルフォーカス",new DebugFileFocusTask());
+            
+            _debugTaskManager.Init();
         }
 
         private void OnDisable()
