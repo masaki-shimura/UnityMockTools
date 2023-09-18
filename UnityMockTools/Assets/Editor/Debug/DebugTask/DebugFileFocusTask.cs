@@ -4,6 +4,7 @@ using Mono.Cecil;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Object = UnityEngine.Object;
 
 namespace MSLib
 {
@@ -80,7 +81,7 @@ namespace MSLib
                         {
                             EditorGUILayout.LabelField(pathInfo.label,GUILayout.MaxWidth(150.0f));
                             if (pathInfo.target != null)
-                                EditorGUILayout.ObjectField(pathInfo.target, typeof(GameObject),true,GUILayout.MaxWidth(500.0f));
+                                EditorGUILayout.ObjectField(pathInfo.target, typeof(Object),true,GUILayout.MaxWidth(500.0f));
                             
                         }
                     }

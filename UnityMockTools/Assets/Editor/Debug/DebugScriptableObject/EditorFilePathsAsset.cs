@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace MSLib
 {
@@ -9,9 +10,9 @@ namespace MSLib
     public class EditorFilePathsAsset : ScriptableObject
     {
         [SerializeField] private List<DebugFileFocusData> folderPathList = new List<DebugFileFocusData>();
-        [SerializeField] private List<DebugGameObjectFocusData> gameObjectPathList = new List<DebugGameObjectFocusData>();
+        [SerializeField] private List<DebugObjectFocusData> gameObjectPathList = new List<DebugObjectFocusData>();
         public IReadOnlyList<DebugFileFocusData> PathList => folderPathList;
-        public IReadOnlyList<DebugGameObjectFocusData> GameObjectPathList => gameObjectPathList;
+        public IReadOnlyList<DebugObjectFocusData> GameObjectPathList => gameObjectPathList;
     }
 
     [Serializable]
@@ -22,10 +23,10 @@ namespace MSLib
     }
 
     [Serializable]
-    public class DebugGameObjectFocusData
+    public class DebugObjectFocusData
     {
         public string label = "";
-        public GameObject target = null;
+        public Object target = null;
     }
 }
 
