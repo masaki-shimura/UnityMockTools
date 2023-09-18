@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebdad02e12827c4ab6ddf2cf99cb417, type: 3}
   m_Name: EditorFilePaths
   m_EditorClassIdentifier: 
-  pathList:
-  - label: "\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306E\u5834\u6240 (EditorFilePaths.asset)"
+  folderPathList:
+  - label: "\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306E\u5834\u6240"
     path: Assets/Editor/Debug/DebugScriptableObject
-  - label: "Scene\u4FDD\u5B58\u5834\u6240"
+  - label: "\u30B7\u30FC\u30F3\u306E\u4FDD\u5B58\u5834\u6240"
     path: Assets/Scenes
+  gameObjectPathList:
+  - label: "\u30B5\u30F3\u30D7\u30EB\u30D7\u30EC\u30CF\u30D6\u306E\u4FDD\u5B58\u5834\u6240"
+    target: {fileID: 5548868908057585553, guid: 98dc972c6305d2246b01093eb125f91a,
+      type: 3}

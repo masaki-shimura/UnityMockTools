@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using Mono.Cecil;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -70,6 +71,17 @@ namespace MSLib
                             {
                                 Execution(path);
                             }
+                        }
+                    }
+
+                    foreach (var pathInfo in editorFilePathsAsset.GameObjectPathList)
+                    {
+                        using (new GUILayout.HorizontalScope())
+                        {
+                            EditorGUILayout.LabelField(pathInfo.label,GUILayout.MaxWidth(150.0f));
+                            if (pathInfo.target != null)
+                                EditorGUILayout.ObjectField(pathInfo.target, typeof(GameObject),true,GUILayout.MaxWidth(500.0f));
+                            
                         }
                     }
                 }
