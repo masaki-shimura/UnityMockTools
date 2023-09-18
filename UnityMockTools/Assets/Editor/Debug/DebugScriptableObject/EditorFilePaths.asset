@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebdad02e12827c4ab6ddf2cf99cb417, type: 3}
+  m_Name: EditorFilePaths
+  m_EditorClassIdentifier: 
+  pathList:
+  - label: "\u8A2D\u5B9A\u30D5\u30A1\u30A4\u30EB\u306E\u5834\u6240 (EditorFilePaths.asset)"
+    path: Assets/Editor/Debug/DebugScriptableObject
+  - label: "Scene\u4FDD\u5B58\u5834\u6240"
+    path: Assets/Scenes
