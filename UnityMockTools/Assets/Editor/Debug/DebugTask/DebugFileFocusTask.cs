@@ -48,6 +48,10 @@ namespace MSLib
                 }
                 return;
             }
+            
+            EditorGUILayout.ObjectField("設定ファイル", editorFilePathsAsset, typeof(object), true,
+                GUILayout.MaxWidth(300.0f));
+            
             using (new GUILayout.VerticalScope())
             {
                 using (var scrollView = new EditorGUILayout.ScrollViewScope(scrollPosition))
