@@ -15,3 +15,9 @@
 エディターウィンドウから特定のプレハブを生成する機能です。
 
 <img src="UnityMockToolsDocument/README/CreateTemplatePrefabWindow.gif" width="500">
+
+## ■ カラーリファレンス機能
+
+カラー情報を資料として記録させるデバックウィンドウです。
+
+<img src="UnityMockToolsDocument/README/ColorReferenceWindow.gif" width="500">
