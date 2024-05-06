@@ -5,7 +5,7 @@ namespace MSLib
     public class ColorReferenceWindow : EditorWindow
     {
         private DebugTaskManager _debugTaskManager = new DebugTaskManager();
-        
+
         [MenuItem("Tools/Color/ColorReferenceWindow")]
         static void Initialize()
         {
@@ -13,7 +13,7 @@ namespace MSLib
                 (ColorReferenceWindow)EditorWindow.GetWindow(typeof(ColorReferenceWindow));
             window.Show();
         }
-        
+
         private void OnGUI()
         {
             _debugTaskManager.Draw();

@@ -1,23 +1,18 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using MSLib;
 using UnityEditor;
-using UnityEngine;
 
 namespace MSLib
 {
     public sealed class DebugFileFocusWindow : EditorWindow
     {
         private DebugTaskManager _debugTaskManager = new DebugTaskManager();
-    
+
         [MenuItem("Tools/Debug/DebugFileFocusWindow")]
         static void Initialize()
         {
             var window = (DebugFileFocusWindow)EditorWindow.GetWindow(typeof(DebugFileFocusWindow));
             window.Show();
         }
-        
+
         private void OnGUI()
         {
             _debugTaskManager.Draw();
@@ -25,8 +20,8 @@ namespace MSLib
 
         private void OnEnable()
         {
-            _debugTaskManager.AddTask("ファイルフォーカス",new DebugFileFocusTask());
-            
+            _debugTaskManager.AddTask("ファイルフォーカス", new DebugFileFocusTask());
+
             _debugTaskManager.Init();
         }
 

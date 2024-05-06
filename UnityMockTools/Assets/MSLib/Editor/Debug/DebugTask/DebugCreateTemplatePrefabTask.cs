@@ -1,7 +1,7 @@
 using System;
-using UnityEngine.Assertions;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace MSLib
 {
