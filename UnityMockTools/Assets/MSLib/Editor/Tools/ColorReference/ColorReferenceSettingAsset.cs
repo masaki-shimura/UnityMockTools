@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
     [CreateAssetMenu(fileName = "ColorReferenceSetting", menuName = "ScriptableObjects/ColorReferenceSettingAsset")]
     public sealed class ColorReferenceSettingAsset : ScriptableObject
@@ -17,7 +17,7 @@ namespace MSLib
         };
 
         private static string _assetPath = "";
-        private const string DefaultAssetPath = "Assets/Editor/Tool/ColorReference/ColorReferenceSetting.asset";
+        private const string DefaultAssetPath = "Assets/MSLib/Editor/Tools/ColorReference/ColorReferenceSetting.asset";
 
         public string UpdateLabel { get; set; } = "NONE";
         public Color UpdateColor { get; set; } = Color.white;

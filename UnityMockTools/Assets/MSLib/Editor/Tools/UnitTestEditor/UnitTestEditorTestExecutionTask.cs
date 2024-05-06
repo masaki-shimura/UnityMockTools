@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.UnitTestEditor
 {
-    public sealed class UnitTestEditorTestExecutionTask : IDebugTask
+    public sealed class UnitTestEditorTestExecutionTask : IEditorWindowTask
     {
         private const string overviewText = "各種UnitTaskの実行用";
         private readonly UnitTestEditorModel _unitTestEditorModel;

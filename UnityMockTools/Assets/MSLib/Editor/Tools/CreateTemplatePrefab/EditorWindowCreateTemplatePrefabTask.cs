@@ -1,17 +1,20 @@
 using System;
-using UnityEngine.Assertions;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Assertions;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.CreateTemplatePrefab
 {
-    public sealed class DebugCreateTemplatePrefabTask : IDebugTask
+    public sealed class EditorWindowCreateTemplatePrefabTask : IEditorWindowTask
     {
         private Vector2 scrollPosition = new Vector2();
         public bool IsFoldout { get; set; }
         private const string overviewText = "シーン上に任意のプレハブを生成します";
         private EditorTemplatePrefabAsset _editorTemplatePrefabAsset = null;
-        private string settingFilePath = "Assets/Editor/Debug/DebugScriptableObject/EditorTemplatePrefabAsset.asset";
+
+        private string settingFilePath =
+            "Assets/MSLib/Editor/Tools/CreateTemplatePrefab/EditorTemplatePrefabAsset.asset";
+
         private DebugTemplatePrefabGroup selectGroup = DebugTemplatePrefabGroup.None;
 
         public void Init()

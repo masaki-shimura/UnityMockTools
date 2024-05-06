@@ -2,9 +2,9 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
-    public sealed class ColorReferenceTask : IDebugTask
+    public sealed class ColorReferenceTask : IEditorWindowTask
     {
         private ColorReferenceSettingAsset _settingAsset;
         public bool IsFoldout { get; set; }

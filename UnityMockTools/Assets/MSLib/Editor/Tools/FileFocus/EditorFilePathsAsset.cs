@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.FileFocus
 {
-    [CreateAssetMenu(fileName = "EditorFilePaths",menuName = "ScriptableObjects/EditorFilePathsAsset")]
+    [CreateAssetMenu(fileName = "EditorFilePaths", menuName = "ScriptableObjects/EditorFilePathsAsset")]
     public class EditorFilePathsAsset : ScriptableObject
     {
         [SerializeField] private List<DebugFileFocusData> folderPathList = new List<DebugFileFocusData>();
@@ -29,4 +28,3 @@ namespace MSLib
         public Object target = null;
     }
 }
-

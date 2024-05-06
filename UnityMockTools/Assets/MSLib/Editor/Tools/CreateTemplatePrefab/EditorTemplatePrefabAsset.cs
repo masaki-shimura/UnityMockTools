@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.CreateTemplatePrefab
 {
     [CreateAssetMenu(fileName = "EditorTemplatePrefabAsset", menuName = "ScriptableObjects/EditorTemplatePrefabAsset")]
     public sealed class EditorTemplatePrefabAsset : ScriptableObject
@@ -25,10 +25,10 @@ namespace MSLib
     [Flags]
     public enum DebugTemplatePrefabGroup
     {
-        None    = 0x000,
+        None = 0x000,
         Default = 0x001,
-        Player  = 0x002,
-        UI      = 0x004,
-        Sound   = 0x008
+        Player = 0x002,
+        UI = 0x004,
+        Sound = 0x008
     }
 }

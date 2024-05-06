@@ -1,8 +1,8 @@
 ﻿using UnityEditor;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.UnitTestEditor
 {
-    public sealed class UnitTaskEditorCategoryReferenceTask : IDebugTask
+    public sealed class UnitTestEditorCategoryReferenceTask : IEditorWindowTask
     {
         private const string overviewText = "ユニットテストのカテゴリを参照します";
 
@@ -10,7 +10,7 @@ namespace MSLib
 
         public bool IsFoldout { get; set; }
 
-        public UnitTaskEditorCategoryReferenceTask(UnitTestEditorModel model)
+        public UnitTestEditorCategoryReferenceTask(UnitTestEditorModel model)
         {
             _unitTestEditorModel = model;
         }

@@ -3,9 +3,9 @@ using UnityEditor;
 
 namespace MSLib
 {
-    public sealed class DebugTaskManager
+    public sealed class EditorWindowTaskManager
     {
-        private Dictionary<string,IDebugTask> debugTaskList = new Dictionary<string,IDebugTask>();
+        private Dictionary<string, IEditorWindowTask> debugTaskList = new Dictionary<string, IEditorWindowTask>();
 
         public void Init()
         {
@@ -21,7 +21,7 @@ namespace MSLib
             {
                 debugTask.Value.UnInit();
             }
-            
+
             debugTaskList.Clear();
             debugTaskList = null;
         }
@@ -39,14 +39,15 @@ namespace MSLib
             foreach (var debugTask in debugTaskList)
             {
                 var debugTaskValue = debugTask.Value;
-                debugTaskValue.IsFoldout = EditorGUILayout.BeginFoldoutHeaderGroup(debugTaskValue.IsFoldout,debugTask.Key);
+                debugTaskValue.IsFoldout =
+                    EditorGUILayout.BeginFoldoutHeaderGroup(debugTaskValue.IsFoldout, debugTask.Key);
 
                 if (debugTaskValue.IsFoldout)
                 {
-                    EditorGUILayout.HelpBox(debugTaskValue.GetOverviewText(),MessageType.Info,true);
+                    EditorGUILayout.HelpBox(debugTaskValue.GetOverviewText(), MessageType.Info, true);
                     debugTaskValue.Draw();
                 }
-                
+
                 EditorGUILayout.EndFoldoutHeaderGroup();
             }
         }
@@ -58,11 +59,10 @@ namespace MSLib
                 debugTask.Value.Execution();
             }
         }
-        
-        public void AddTask(string labelName, IDebugTask debugTask)
+
+        public void AddTask(string labelName, IEditorWindowTask editorWindowTask)
         {
-            debugTaskList.Add(labelName,debugTask);
+            debugTaskList.Add(labelName, editorWindowTask);
         }
     }
-
 }

@@ -1,34 +1,34 @@
 using UnityEditor;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
     public class ColorReferenceWindow : EditorWindow
     {
-        private DebugTaskManager _debugTaskManager = new DebugTaskManager();
-        
-        [MenuItem("Tools/Color/ColorReferenceWindow")]
+        private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
+
+        [MenuItem("Tools/ColorReferenceWindow")]
         static void Initialize()
         {
             var window =
                 (ColorReferenceWindow)EditorWindow.GetWindow(typeof(ColorReferenceWindow));
             window.Show();
         }
-        
+
         private void OnGUI()
         {
-            _debugTaskManager.Draw();
+            _editorWindowTaskManager.Draw();
         }
 
         private void OnEnable()
         {
-            _debugTaskManager.AddTask("Color Reference", new ColorReferenceTask());
+            _editorWindowTaskManager.AddTask("Color Reference", new ColorReferenceTask());
 
-            _debugTaskManager.Init();
+            _editorWindowTaskManager.Init();
         }
 
         private void OnDisable()
         {
-            _debugTaskManager.UnInit();
+            _editorWindowTaskManager.UnInit();
         }
     }
 }
