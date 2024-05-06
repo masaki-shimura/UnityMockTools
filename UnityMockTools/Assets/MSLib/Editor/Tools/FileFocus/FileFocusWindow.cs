@@ -2,14 +2,14 @@ using UnityEditor;
 
 namespace MSLib
 {
-    public sealed class DebugFileFocusWindow : EditorWindow
+    public sealed class FileFocusWindow : EditorWindow
     {
         private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
 
-        [MenuItem("Tools/Debug/DebugFileFocusWindow")]
+        [MenuItem("Tools/FileFocusWindow")]
         static void Initialize()
         {
-            var window = (DebugFileFocusWindow)EditorWindow.GetWindow(typeof(DebugFileFocusWindow));
+            var window = (FileFocusWindow)EditorWindow.GetWindow(typeof(FileFocusWindow));
             window.Show();
         }
 
