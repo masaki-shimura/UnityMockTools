@@ -12,7 +12,7 @@ namespace MSLib
         private const string overviewText = "「Project」Windowで任意のファイルをフォーカスする事が出来ます";
         private string[] paths = new[] { "IDebugTask" }; //Assets/.../
         private EditorFilePathsAsset editorFilePathsAsset = null;
-        private string settingFilePath = "Assets/Editor/Debug/DebugScriptableObject/EditorFilePaths.asset";
+        private string settingFilePath = "UnityMockTools/Assets/MSLib/Editor/Tools/FileFocus/EditorFilePaths.asset";
 
 
         public bool IsFoldout { get; set; }
