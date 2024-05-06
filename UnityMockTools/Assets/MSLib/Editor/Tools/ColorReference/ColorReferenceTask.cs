@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MSLib
 {
-    public sealed class ColorReferenceTask : IDebugTask
+    public sealed class ColorReferenceTask : IEditorWindowTask
     {
         private ColorReferenceSettingAsset _settingAsset;
         public bool IsFoldout { get; set; }

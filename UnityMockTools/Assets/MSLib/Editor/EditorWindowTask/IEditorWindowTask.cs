@@ -1,6 +1,6 @@
 namespace MSLib
 {
-    public interface IDebugTask
+    public interface IEditorWindowTask
     {
         public bool IsFoldout { get; set; }
 

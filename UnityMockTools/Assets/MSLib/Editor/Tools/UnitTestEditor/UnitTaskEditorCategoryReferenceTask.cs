@@ -2,7 +2,7 @@
 
 namespace MSLib
 {
-    public sealed class UnitTaskEditorCategoryReferenceTask : IDebugTask
+    public sealed class UnitTaskEditorCategoryReferenceTask : IEditorWindowTask
     {
         private const string overviewText = "ユニットテストのカテゴリを参照します";
 

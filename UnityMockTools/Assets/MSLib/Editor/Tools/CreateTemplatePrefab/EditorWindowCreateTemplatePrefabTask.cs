@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 namespace MSLib
 {
-    public sealed class DebugCreateTemplatePrefabTask : IDebugTask
+    public sealed class EditorWindowCreateTemplatePrefabTask : IEditorWindowTask
     {
         private Vector2 scrollPosition = new Vector2();
         public bool IsFoldout { get; set; }

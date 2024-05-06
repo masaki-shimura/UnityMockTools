@@ -3,9 +3,9 @@ using UnityEditor;
 
 namespace MSLib
 {
-    public sealed class DebugTaskManager
+    public sealed class EditorWindowTaskManager
     {
-        private Dictionary<string, IDebugTask> debugTaskList = new Dictionary<string, IDebugTask>();
+        private Dictionary<string, IEditorWindowTask> debugTaskList = new Dictionary<string, IEditorWindowTask>();
 
         public void Init()
         {
@@ -60,9 +60,9 @@ namespace MSLib
             }
         }
 
-        public void AddTask(string labelName, IDebugTask debugTask)
+        public void AddTask(string labelName, IEditorWindowTask editorWindowTask)
         {
-            debugTaskList.Add(labelName, debugTask);
+            debugTaskList.Add(labelName, editorWindowTask);
         }
     }
 }

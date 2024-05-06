@@ -2,7 +2,7 @@
 
 namespace MSLib
 {
-    public sealed class UnitTestEditorTestExecutionTask : IDebugTask
+    public sealed class UnitTestEditorTestExecutionTask : IEditorWindowTask
     {
         private const string overviewText = "各種UnitTaskの実行用";
         private readonly UnitTestEditorModel _unitTestEditorModel;

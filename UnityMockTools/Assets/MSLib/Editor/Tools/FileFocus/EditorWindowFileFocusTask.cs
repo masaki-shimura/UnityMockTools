@@ -6,11 +6,11 @@ using Object = UnityEngine.Object;
 
 namespace MSLib
 {
-    public sealed class DebugFileFocusTask : IDebugTask
+    public sealed class EditorWindowFileFocusTask : IEditorWindowTask
     {
         private Vector2 scrollPosition = new Vector2();
         private const string overviewText = "「Project」Windowで任意のファイルをフォーカスする事が出来ます";
-        private string[] paths = new[] { "IDebugTask" }; //Assets/.../
+        private string[] paths = new[] { "IEditorWindowTask" }; //Assets/.../
         private EditorFilePathsAsset editorFilePathsAsset = null;
         private string settingFilePath = "Assets/MSLib/Editor/Tools/FileFocus/EditorFilePaths.asset";
 

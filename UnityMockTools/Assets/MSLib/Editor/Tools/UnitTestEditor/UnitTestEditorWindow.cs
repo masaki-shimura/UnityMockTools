@@ -4,7 +4,7 @@ namespace MSLib
 {
     public sealed class UnitTestEditorWindow : EditorWindow
     {
-        private DebugTaskManager _debugTaskManager = new DebugTaskManager();
+        private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
         private static UnitTestEditorModel _unitTestEditorModel;
 
         [MenuItem("Tools/UnitTest/DebugUnitTestEditorWindow")]
@@ -18,20 +18,21 @@ namespace MSLib
         void OnEnable()
         {
             _unitTestEditorModel = new UnitTestEditorModel();
-            _debugTaskManager.AddTask("Test Execution", new UnitTestEditorTestExecutionTask(_unitTestEditorModel));
-            _debugTaskManager.AddTask("Category Reference",
+            _editorWindowTaskManager.AddTask("Test Execution",
+                new UnitTestEditorTestExecutionTask(_unitTestEditorModel));
+            _editorWindowTaskManager.AddTask("Category Reference",
                 new UnitTaskEditorCategoryReferenceTask(_unitTestEditorModel));
-            _debugTaskManager.Init();
+            _editorWindowTaskManager.Init();
         }
 
         void OnDisable()
         {
-            _debugTaskManager.UnInit();
+            _editorWindowTaskManager.UnInit();
         }
 
         private void OnGUI()
         {
-            _debugTaskManager.Draw();
+            _editorWindowTaskManager.Draw();
         }
     }
 }

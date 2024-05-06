@@ -4,7 +4,7 @@ namespace MSLib
 {
     public class ColorReferenceWindow : EditorWindow
     {
-        private DebugTaskManager _debugTaskManager = new DebugTaskManager();
+        private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
 
         [MenuItem("Tools/Color/ColorReferenceWindow")]
         static void Initialize()
@@ -16,19 +16,19 @@ namespace MSLib
 
         private void OnGUI()
         {
-            _debugTaskManager.Draw();
+            _editorWindowTaskManager.Draw();
         }
 
         private void OnEnable()
         {
-            _debugTaskManager.AddTask("Color Reference", new ColorReferenceTask());
+            _editorWindowTaskManager.AddTask("Color Reference", new ColorReferenceTask());
 
-            _debugTaskManager.Init();
+            _editorWindowTaskManager.Init();
         }
 
         private void OnDisable()
         {
-            _debugTaskManager.UnInit();
+            _editorWindowTaskManager.UnInit();
         }
     }
 }

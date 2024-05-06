@@ -4,7 +4,7 @@ namespace MSLib
 {
     public sealed class DebugFileFocusWindow : EditorWindow
     {
-        private DebugTaskManager _debugTaskManager = new DebugTaskManager();
+        private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
 
         [MenuItem("Tools/Debug/DebugFileFocusWindow")]
         static void Initialize()
@@ -15,19 +15,19 @@ namespace MSLib
 
         private void OnGUI()
         {
-            _debugTaskManager.Draw();
+            _editorWindowTaskManager.Draw();
         }
 
         private void OnEnable()
         {
-            _debugTaskManager.AddTask("ファイルフォーカス", new DebugFileFocusTask());
+            _editorWindowTaskManager.AddTask("ファイルフォーカス", new EditorWindowFileFocusTask());
 
-            _debugTaskManager.Init();
+            _editorWindowTaskManager.Init();
         }
 
         private void OnDisable()
         {
-            _debugTaskManager.UnInit();
+            _editorWindowTaskManager.UnInit();
         }
     }
 }
