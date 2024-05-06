@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using Object = UnityEngine.Object;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.FileFocus
 {
     public sealed class EditorWindowFileFocusTask : IEditorWindowTask
     {

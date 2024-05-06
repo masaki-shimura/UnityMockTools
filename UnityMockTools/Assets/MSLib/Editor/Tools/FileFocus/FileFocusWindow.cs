@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.FileFocus
 {
     public sealed class FileFocusWindow : EditorWindow
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.FileFocus
 {
     [CreateAssetMenu(fileName = "EditorFilePaths", menuName = "ScriptableObjects/EditorFilePathsAsset")]
     public class EditorFilePathsAsset : ScriptableObject
