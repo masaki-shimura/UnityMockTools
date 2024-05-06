@@ -6,13 +6,17 @@ namespace MSLib
     {
         private const string overviewText = "ユニットテストのカテゴリを参照します";
 
-        private UnitTestEditorModel _unitTestEditorModel = null;
+        private readonly UnitTestEditorModel _unitTestEditorModel = null;
 
         public bool IsFoldout { get; set; }
 
+        public UnitTaskEditorCategoryReferenceTask(UnitTestEditorModel model)
+        {
+            _unitTestEditorModel = model;
+        }
+
         public void Init()
         {
-            _unitTestEditorModel = new UnitTestEditorModel();
         }
 
         public void UnInit()
