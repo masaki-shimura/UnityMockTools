@@ -11,7 +11,10 @@ namespace MSLib
         public bool IsFoldout { get; set; }
         private const string overviewText = "シーン上に任意のプレハブを生成します";
         private EditorTemplatePrefabAsset _editorTemplatePrefabAsset = null;
-        private string settingFilePath = "Assets/Editor/Debug/DebugScriptableObject/EditorTemplatePrefabAsset.asset";
+
+        private string settingFilePath =
+            "Assets/MSLib/Editor/Tools/CreateTemplatePrefab/EditorTemplatePrefabAsset.asset";
+
         private DebugTemplatePrefabGroup selectGroup = DebugTemplatePrefabGroup.None;
 
         public void Init()
