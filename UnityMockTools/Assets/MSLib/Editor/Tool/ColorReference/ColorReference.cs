@@ -8,8 +8,8 @@ namespace MSLib
     {
         public Color Color { get; private set; }
         public string LabelName { get; set; } = "NONE";
-        
-        public ColorReference(Color color,string labelName)
+
+        public ColorReference(Color color, string labelName)
         {
             this.Color = color;
             this.LabelName = labelName;
