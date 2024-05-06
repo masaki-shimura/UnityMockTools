@@ -7,7 +7,7 @@ using UnityEditor;
 using UnityEditor.TestTools.TestRunner.Api;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.UnitTestEditor
 {
     public sealed class UnitTestEditorModel
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.UnitTestEditor
 {
     public sealed class UnitTestEditorTestExecutionTask : IEditorWindowTask
     {

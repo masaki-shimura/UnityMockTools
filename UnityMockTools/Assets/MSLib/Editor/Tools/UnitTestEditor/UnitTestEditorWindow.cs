@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.UnitTestEditor
 {
     public sealed class UnitTestEditorWindow : EditorWindow
     {
