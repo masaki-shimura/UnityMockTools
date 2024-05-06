@@ -2,15 +2,15 @@ using UnityEditor;
 
 namespace MSLib
 {
-    public class DebugCreateTemplatePrefabWindow : EditorWindow
+    public class CreateTemplatePrefabWindow : EditorWindow
     {
         private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
 
-        [MenuItem("Tools/Debug/DebugCreateTemplatePrefabWindow")]
+        [MenuItem("Tools/CreateTemplatePrefabWindow")]
         static void Initialize()
         {
             var window =
-                (DebugCreateTemplatePrefabWindow)EditorWindow.GetWindow(typeof(DebugCreateTemplatePrefabWindow));
+                (CreateTemplatePrefabWindow)EditorWindow.GetWindow(typeof(CreateTemplatePrefabWindow));
             window.Show();
         }
 
