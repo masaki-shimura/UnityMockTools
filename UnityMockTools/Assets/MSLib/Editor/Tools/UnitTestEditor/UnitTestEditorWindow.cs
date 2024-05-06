@@ -21,7 +21,7 @@ namespace MSLib.Editor.Tools.UnitTestEditor
             _editorWindowTaskManager.AddTask("Test Execution",
                 new UnitTestEditorTestExecutionTask(_unitTestEditorModel));
             _editorWindowTaskManager.AddTask("Category Reference",
-                new UnitTaskEditorCategoryReferenceTask(_unitTestEditorModel));
+                new UnitTestEditorCategoryReferenceTask(_unitTestEditorModel));
             _editorWindowTaskManager.Init();
         }
 

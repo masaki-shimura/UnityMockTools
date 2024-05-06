@@ -2,7 +2,7 @@
 
 namespace MSLib.Editor.Tools.UnitTestEditor
 {
-    public sealed class UnitTaskEditorCategoryReferenceTask : IEditorWindowTask
+    public sealed class UnitTestEditorCategoryReferenceTask : IEditorWindowTask
     {
         private const string overviewText = "ユニットテストのカテゴリを参照します";
 
@@ -10,7 +10,7 @@ namespace MSLib.Editor.Tools.UnitTestEditor
 
         public bool IsFoldout { get; set; }
 
-        public UnitTaskEditorCategoryReferenceTask(UnitTestEditorModel model)
+        public UnitTestEditorCategoryReferenceTask(UnitTestEditorModel model)
         {
             _unitTestEditorModel = model;
         }
