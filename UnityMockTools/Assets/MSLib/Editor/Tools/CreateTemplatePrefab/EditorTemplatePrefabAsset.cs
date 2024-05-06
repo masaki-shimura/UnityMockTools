@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.CreateTemplatePrefab
 {
     [CreateAssetMenu(fileName = "EditorTemplatePrefabAsset", menuName = "ScriptableObjects/EditorTemplatePrefabAsset")]
     public sealed class EditorTemplatePrefabAsset : ScriptableObject

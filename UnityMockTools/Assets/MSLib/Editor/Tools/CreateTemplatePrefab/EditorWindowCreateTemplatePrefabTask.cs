@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.CreateTemplatePrefab
 {
     public sealed class EditorWindowCreateTemplatePrefabTask : IEditorWindowTask
     {
