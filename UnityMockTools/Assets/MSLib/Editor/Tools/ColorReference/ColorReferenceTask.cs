@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
     public sealed class ColorReferenceTask : IEditorWindowTask
     {

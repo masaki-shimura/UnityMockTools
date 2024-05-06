@@ -1,12 +1,12 @@
 using UnityEditor;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
     public class ColorReferenceWindow : EditorWindow
     {
         private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
 
-        [MenuItem("Tools/Color/ColorReferenceWindow")]
+        [MenuItem("Tools/ColorReferenceWindow")]
         static void Initialize()
         {
             var window =

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
     [Serializable]
     public sealed class ColorReference

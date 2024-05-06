@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
-namespace MSLib
+namespace MSLib.Editor.Tools.ColorReference
 {
     [CreateAssetMenu(fileName = "ColorReferenceSetting", menuName = "ScriptableObjects/ColorReferenceSettingAsset")]
     public sealed class ColorReferenceSettingAsset : ScriptableObject
