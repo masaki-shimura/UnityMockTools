@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if ENABLE_UNIT_TEST_EDITOR_WINDOW
+using System;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -27,3 +28,4 @@ namespace MSLib
         }
     }
 }
+#endif
