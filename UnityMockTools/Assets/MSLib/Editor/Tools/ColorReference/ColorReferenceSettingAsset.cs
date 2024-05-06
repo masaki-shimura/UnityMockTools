@@ -17,7 +17,7 @@ namespace MSLib
         };
 
         private static string _assetPath = "";
-        private const string DefaultAssetPath = "Assets/Editor/Tool/ColorReference/ColorReferenceSetting.asset";
+        private const string DefaultAssetPath = "Assets/MSLib/Editor/Tools/ColorReference/ColorReferenceSetting.asset";
 
         public string UpdateLabel { get; set; } = "NONE";
         public Color UpdateColor { get; set; } = Color.white;
