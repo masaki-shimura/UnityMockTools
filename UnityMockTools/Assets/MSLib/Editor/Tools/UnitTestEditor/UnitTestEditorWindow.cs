@@ -7,7 +7,7 @@ namespace MSLib.Editor.Tools.UnitTestEditor
         private EditorWindowTaskManager _editorWindowTaskManager = new EditorWindowTaskManager();
         private static UnitTestEditorModel _unitTestEditorModel;
 
-        [MenuItem("Tools/UnitTest/DebugUnitTestEditorWindow")]
+        [MenuItem("Tools/UnitTestEditorWindow")]
         static void Initialize()
         {
             var window =
