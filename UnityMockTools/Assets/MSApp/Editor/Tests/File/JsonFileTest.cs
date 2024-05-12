@@ -7,6 +7,19 @@ namespace MSApp.Editor.Tests.File
 {
     public class JsonFileTest
     {
+        [Test, Ignore("テストの度に生成されてしまうので停止")]
+        public void SaveTest()
+        {
+            var jsonFile = new JsonFile<DummyData>();
+
+            var dummyData = new DummyData("DummyTextです", -1);
+            var fileText = jsonFile.ConvertToJson(dummyData);
+            var filePath = new FilePath("dummyFile", FilePath.ExtensionJson, "/");
+            Debug.Log($"FullPath:{filePath.FullPath}");
+
+            jsonFile.Save(filePath, fileText);
+        }
+
         [Test]
         public void ConvertToJsonTest()
         {
