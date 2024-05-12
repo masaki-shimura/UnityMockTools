@@ -11,7 +11,7 @@ namespace MSApp.Scripts.File
         /// </summary>
         /// <param name="data">MonoBehaviour、ScriptableObject 、Serializable のデータを入れてください</param>
         /// <returns></returns>
-        public string ConvertToJson(T data)
+        public FileText ConvertToJson(T data)
         {
             //Note:is Serializable で検知する事が出来ない為「IsDefined」でチェック
             //※IsDefined:派生クラス先でオーバーライドされている属性を調べる時に使用
@@ -20,7 +20,9 @@ namespace MSApp.Scripts.File
                 data is ScriptableObject ||
                 data.GetType().IsDefined(typeof(SerializableAttribute), true),
                 "MonoBehaviour、ScriptableObject 、Serializable のデータを入れてください");
-            return JsonUtility.ToJson(data);
+
+            var fileText = new FileText(JsonUtility.ToJson(data));
+            return fileText;
         }
 
         /// <summary>

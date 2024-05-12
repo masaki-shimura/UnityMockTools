@@ -13,11 +13,14 @@ namespace MSApp.Editor.Tests.File
             var jsonFile = new JsonFile<DummyData>();
             var dummyData = new DummyData("DummyTextです", -1);
 
-            var jsonText = jsonFile.ConvertToJson(dummyData);
+            var fileText = jsonFile.ConvertToJson(dummyData);
 
             Debug.Log($"jsonText:{jsonText}");
             Assert.IsNotNull(jsonText);
             Assert.IsNotEmpty(jsonText);
+            Debug.Log($"jsonText:{fileText.Text}");
+            Assert.IsNotNull(fileText.Text);
+            Assert.IsNotEmpty(fileText.Text);
         }
 
         [Test]
