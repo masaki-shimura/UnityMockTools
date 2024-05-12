@@ -15,9 +15,8 @@ namespace MSApp.Editor.Tests.File
             var dummyData = new DummyData("DummyTextです", -1);
             var fileText = jsonFile.ConvertToJson(dummyData);
             var filePath = new FilePath("dummyFile", FilePath.ExtensionJson, "/");
-            Debug.Log($"FullPath:{filePath.FullPath}");
-
             jsonFile.Save(filePath, fileText);
+            Debug.Log($"Jsonファイルのセーブ処理を実行しました FullPath:{filePath.FullPath} /Text:{fileText.Text}");
         }
 
         [Test]
