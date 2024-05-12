@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c278392ed074e01bf51182d2b46b827, type: 3}
+  m_Name: ReferenceURLWindowSetting
+  m_EditorClassIdentifier: 
+  _referenceUrlList:
+  - tag: Unity Documentation
+    toolTipText: "Unity\u306E\u516C\u5F0F\u30EA\u30D5\u30A1\u30EC\u30F3\u30B9"
+    url: https://docs.unity3d.com/Manual/index.html
+  - tag: Jet Brains Rider
+    toolTipText: "Jet Brains Rider\u306E\u516C\u5F0F\u30EA\u30D5\u30A1\u30EC\u30F3\u30B9"
+    url: https://pleiades.io/help/rider/Introduction.html
+  - tag: Mermaid
+    toolTipText: "Mermaid \u306E\u516C\u5F0F\u30EA\u30D5\u30A1\u30EC\u30F3\u30B9"
+    url: https://mermaid.js.org/intro/
