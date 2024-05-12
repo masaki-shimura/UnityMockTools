@@ -21,7 +21,7 @@ namespace MSLib.Editor.Tools.ReferenceURL
 
         private void OnEnable()
         {
-            _editorWindowTaskManager.AddTask("Reference URL List", new EditorWindowNullObjectTask());
+            _editorWindowTaskManager.AddTask("Reference URL List", new ReferenceURLListTask());
 
             _editorWindowTaskManager.Init();
         }
