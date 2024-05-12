@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -6,6 +7,13 @@ namespace MSApp.Scripts.File
 {
     public sealed class JsonFile<T> : IFile
     {
+        public void Save(FilePath path, FileText fileText)
+        {
+            var streamWriter = new StreamWriter(path.FullPath);
+            streamWriter.Write(fileText.Text);
+            streamWriter.Close();
+        }
+
         /// <summary>
         /// JsonTextに変換します
         /// </summary>

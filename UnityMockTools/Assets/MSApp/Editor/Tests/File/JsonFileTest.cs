@@ -15,9 +15,6 @@ namespace MSApp.Editor.Tests.File
 
             var fileText = jsonFile.ConvertToJson(dummyData);
 
-            Debug.Log($"jsonText:{jsonText}");
-            Assert.IsNotNull(jsonText);
-            Assert.IsNotEmpty(jsonText);
             Debug.Log($"jsonText:{fileText.Text}");
             Assert.IsNotNull(fileText.Text);
             Assert.IsNotEmpty(fileText.Text);
