@@ -14,6 +14,17 @@ namespace MSApp.Scripts.File
             streamWriter.Close();
         }
 
+        public FileText Load(FilePath path)
+        {
+            Assert.IsTrue(path.IsExist(), $"ファイルが存在しません{path.FullPath}");
+
+            var streamWriter = new StreamReader(path.FullPath);
+            var fileText = new FileText(streamWriter.ReadToEnd());
+            streamWriter.Close();
+
+            return fileText;
+        }
+
         /// <summary>
         /// JsonTextに変換します
         /// </summary>

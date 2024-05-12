@@ -20,6 +20,16 @@ namespace MSApp.Editor.Tests.File
         }
 
         [Test]
+        public void LoadTest()
+        {
+            var jsonFile = new JsonFile<DummyData>();
+
+            var filePath = new FilePath("dummyFile", FilePath.ExtensionJson, "/");
+            var fileText = jsonFile.Load(filePath);
+            Debug.Log($"Jsonファイルのロード処理を実行しました Text:{fileText.Text}");
+        }
+
+        [Test]
         public void ConvertToJsonTest()
         {
             var jsonFile = new JsonFile<DummyData>();
