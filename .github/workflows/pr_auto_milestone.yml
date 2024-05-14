@@ -1,0 +1,53 @@
+name: pr_auto_milestone
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  set-milestone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    
+    # PR に対してマイルストーンを設定する為に書き込み権限を設定
+    # PR のマイルストーンを読み込む為に読み取り権限を設定
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: PR Auto Milestone
+        uses: actions/github-script
+        with:
+          script: |
+            // マイルストーン情報の取得.
+            const { data: milestones } = await github.rest.issues.listMilestones({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              sort: 'due_on',
+              direction: 'asc'
+            });
+            
+            // 「v0.0.1」の形式のマイルストーンの正規表現ルールで
+            // 「opne」中の物だけを抽出
+            // ない場合はエラーを出力する
+            const milestonePattern = /^v\d+\.\d+\.\d+$/;
+            const matchingMilestones = milestones
+              .filter(m => milestonePattern.test(m.title) && m.state === 'open')
+              .sort((a, b) => new Date(a.due_on) - new Date(b.due_on));
+
+            if (matchingMilestones.length === 0) {
+              throw new Error(`「v1.0.0」形式のマイルストーンタグが存在しませんでした`);
+            }
+            
+            // ソート済みのマイルストーンの一番始めを取得して
+            // PRにマイルストーンを設定する
+            const latestMilestone = matchingMilestones[0];
+            const pr = context.payload.pull_request;
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              milestone: latestMilestone.number
+            });
