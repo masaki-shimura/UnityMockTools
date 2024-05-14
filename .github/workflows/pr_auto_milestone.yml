@@ -21,7 +21,7 @@ jobs:
         with:
           script: |
             // マイルストーン情報の取得.
-            const { data: milestones } = await github.rest.issues.listMilestones({
+            const { data: milestones } = await github.issues.listMilestones({
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
@@ -45,7 +45,7 @@ jobs:
             // PRにマイルストーンを設定する
             const latestMilestone = matchingMilestones[0];
             const pr = context.payload.pull_request;
-            await github.rest.issues.update({
+            await github.issues.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: pr.number,
