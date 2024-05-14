@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: PR Auto Milestone
-        uses: actions/github-script
+        uses: actions/github-script@v6
         with:
           script: |
             // マイルストーン情報の取得.
