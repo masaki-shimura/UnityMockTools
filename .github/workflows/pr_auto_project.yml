@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: PR Auto Project to UnityMockTools
-        uses: actions/github-script
+        uses: actions/github-script@v6
         with:
           script: |
             const pr = context.payload.pull_request;
