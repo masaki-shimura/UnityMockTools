@@ -1,0 +1,58 @@
+name: pr_auto_project
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5  # タイムアウトを10分に設定
+    
+    # PRに「Project」を設定する為に書き込み権限を設定
+    # プロジェクトの設定の為に書き込み権限も設定する
+    # リポジトリ情報の読み込み設定もする
+    permissions:
+      pull-requests: write
+      project: write
+      contents: read
+
+    steps:
+      - name: PR Auto Project to UnityMockTools
+        uses: actions/github-script
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+
+            // リポジトリ内の「Project」情報を一覧で取得
+            const { data: projects } = await github.rest.projects.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+
+            // 指定した名前の「Project」を取得
+            // 存在しない場合はエラーを出力
+            const projectName = "UnityMockTools";
+            const project = projects.find(p => p.name === projectName);
+
+            if (!project) {
+              throw new Error(`Project ${projectName} が見つかりませんでした`);
+            }
+
+            // Projectのデフォルトの設定
+            const { data: columns } = await github.rest.projects.listColumns({
+              project_id: project.id
+            });
+
+            if (columns.length === 0) {
+              throw new Error(`プロジェクトに要素がありませんでした ${projectName}`);
+            }
+
+            const columnId = columns[0].id;
+
+            // 「Project」設定を指定
+            await github.rest.projects.createCard({
+              column_id: columnId,
+              content_id: pr.id,
+              content_type: 'PullRequest'
+            });
