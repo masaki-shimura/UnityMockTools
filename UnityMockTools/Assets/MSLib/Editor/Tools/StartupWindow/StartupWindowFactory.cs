@@ -13,7 +13,10 @@ namespace MSLib.Editor.Tools.StartupWindow
 
         static StartupWindowFactory()
         {
+            //エディタの状態管理の為に「EditorPrefs」を活用し、起動、終了にフラグを更新する。
+            //それによって「HasKey」の状態で開閉を判断する
             EditorApplication.update += Startup;
+            EditorApplication.quitting += () => EditorPrefs.DeleteKey(EditorKey);
         }
 
         private static void Startup()
