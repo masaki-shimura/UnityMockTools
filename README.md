@@ -70,3 +70,10 @@ UntyPackageでインストールする場合に必要なファイルを選別し
 各種URLを事前に登録しておく事でエディタウィンドウから簡易的に開く事が出来る機能。
 
 <img src="UnityMockToolsDocument/README/URLReferenceWindow.gif" width="500">
+
+## ■ スタートアップウィンドウ
+
+UnityEditorを起動した時に開くウィンドウ
+※必要に応じてカスタマイズしてください。
+
+<img src="UnityMockToolsDocument/README/StartupWindow.gif" width="500">
